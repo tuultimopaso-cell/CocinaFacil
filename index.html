@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CocinaFácil</title>
+
+<style>
+body{
+font-family:Arial,sans-serif;
+margin:0;
+background:#f7fff4;
+color:#222;
+}
+
+header{
+background:white;
+padding:25px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.logo{
+font-size:42px;
+color:#2ca23b;
+font-weight:bold;
+}
+
+nav a{
+margin:0 20px;
+text-decoration:none;
+font-size:20px;
+font-weight:bold;
+color:#333;
+}
+
+.hero{
+padding:90px;
+text-align:center;
+background:linear-gradient(135deg,#dfffe0,#ffffff);
+}
+
+.hero h1{
+font-size:70px;
+}
+
+.hero p{
+font-size:25px;
+}
+
+.videos{
+padding:80px;
+}
+
+h2{
+text-align:center;
+font-size:45px;
+margin-bottom:50px;
+color:#2ca23b;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:30px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:25px;
+box-shadow:0 10px 25px rgba(0,0,0,.10);
+}
+
+video{
+width:100%;
+border-radius:20px;
+}
+
+.sugerencias{
+padding:80px;
+background:#eef8ea;
+text-align:center;
+}
+
+.sugerencias input,
+.sugerencias textarea{
+width:80%;
+padding:20px;
+margin:15px;
+font-size:18px;
+border-radius:15px;
+border:1px solid #ccc;
+}
+
+button{
+background:#2ca23b;
+color:white;
+padding:20px 40px;
+border:none;
+border-radius:15px;
+font-size:20px;
+cursor:pointer;
+}
+
+footer{
+margin-top:80px;
+background:white;
+padding:35px;
+text-align:center;
+font-size:20px;
+}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<div class="logo">CocinaFácil</div>
+
+<nav>
+<a href="#">Inicio</a>
+<a href="#">Videos</a>
+<a href="#">Recetas</a>
+<a href="#">Sugerencias</a>
+</nav>
+</header>
+
+<section class="hero">
+<h1>Recetas fáciles y saludables</h1>
+<p>Plataforma universitaria para mejorar la alimentación estudiantil</p>
+<button>Explorar recetas</button>
+</section>
+
+<section class="videos">
+
+<h2>Galería de 19 Videos Saludables</h2>
+
+<div class="grid">
+
+<div class="card"><video controls src="1.mp4"></video></div>
+<div class="card"><video controls src="2.mp4"></video></div>
+<div class="card"><video controls src="3.mp4"></video></div>
+<div class="card"><video controls src="4.mp4"></video></div>
+<div class="card"><video controls src="5.mp4"></video></div>
+<div class="card"><video controls src="6.mp4"></video></div>
+<div class="card"><video controls src="7.mp4"></video></div>
+<div class="card"><video controls src="8.mp4"></video></div>
+<div class="card"><video controls src="9.mp4"></video></div>
+<div class="card"><video controls src="10.mp4"></video></div>
+<div class="card"><video controls src="11.mp4"></video></div>
+<div class="card"><video controls src="12.mp4"></video></div>
+<div class="card"><video controls src="13.mp4"></video></div>
+<div class="card"><video controls src="14.mp4"></video></div>
+<div class="card"><video controls src="15.mp4"></video></div>
+<div class="card"><video controls src="16.mp4"></video></div>
+<div class="card"><video controls src="17.mp4"></video></div>
+<div class="card"><video controls src="18.mp4"></video></div>
+<div class="card"><video controls src="19.mp4"></video></div>
+
+</div>
+
+</section>
+
+<section class="sugerencias">
+<h2>Comparte tu receta saludable</h2>
+
+<input type="text" placeholder="Tu nombre">
+
+<input type="text" placeholder="Nombre de la receta">
+
+<textarea placeholder="Describe tu receta saludable"></textarea>
+
+<br>
+
+<button>Enviar receta</button>
+</section>
+
+<footer>
+© 2026 CocinaFácil - Universidad César Vallejo
+</footer>
+
+</body>
+</html>
