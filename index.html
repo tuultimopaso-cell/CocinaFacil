@@ -259,20 +259,52 @@ Nuestro equipo creó esta plataforma porque detectamos que muchos estudiantes un
 <h2>Comunidad Al_Toque</h2>
 
 <div class="comment-box">
-<input placeholder="Tu nombre">
-<textarea placeholder="Escribe tu comentario o sugerencia"></textarea>
-<button>Publicar</button>
+<input id="nombre" placeholder="Tu nombre">
+<textarea id="comentario" placeholder="Escribe tu comentario o sugerencia"></textarea>
+<button onclick="publicarComentario()">Publicar</button>
 </div>
 
-<div class="comment-box"><strong>Ana:</strong> Excelente iniciativa.</div>
-<div class="comment-box"><strong>Carlos:</strong> Muy útil para estudiantes.</div>
-<div class="comment-box"><strong>Lucía:</strong> Más recetas económicas por favor.</div>
+<div id="comentarios-container"></div>
 
 </section>
 
 <footer>
 © 2026 Al_Toque | Universidad César Vallejo
 </footer>
+
+<script>
+let comentarios = JSON.parse(localStorage.getItem("comentarios")) || [
+{nombre:"Ana",texto:"Excelente iniciativa."},
+{nombre:"Carlos",texto:"Muy útil para estudiantes."},
+{nombre:"Lucía",texto:"Más recetas económicas por favor."}
+];
+
+function mostrarComentarios(){
+let contenedor=document.getElementById("comentarios-container");
+contenedor.innerHTML="";
+comentarios.forEach(c=>{
+contenedor.innerHTML+=`
+<div class="comment-box">
+<strong>${c.nombre}:</strong> ${c.texto}
+</div>`;
+});
+}
+
+function publicarComentario(){
+let nombre=document.getElementById("nombre").value.trim();
+let comentario=document.getElementById("comentario").value.trim();
+
+if(nombre && comentario){
+comentarios.push({nombre:nombre,texto:comentario});
+localStorage.setItem("comentarios",JSON.stringify(comentarios));
+document.getElementById("nombre").value="";
+document.getElementById("comentario").value="";
+mostrarComentarios();
+}
+}
+
+mostrarComentarios();
+</script>
 
 </body>
 </html>
