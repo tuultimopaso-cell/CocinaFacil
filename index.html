@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CocinaFácil Premium</title>
+<title>Al_Toque</title>
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
@@ -29,42 +29,49 @@ z-index:-1;
 }
 
 .hero{
-height:100vh;
+min-height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
 text-align:center;
-padding:40px;
+padding:80px;
 }
 
 .hero h1{
-font-size:75px;
+font-size:80px;
 color:#2ca23b;
+margin-bottom:25px;
+}
+
+.fundadores{
+font-size:22px;
+line-height:1.8;
+margin-bottom:35px;
+font-weight:bold;
 }
 
 .hero p{
 font-size:24px;
-max-width:900px;
-margin:25px auto;
-line-height:1.7;
+max-width:1000px;
+line-height:1.8;
+margin-bottom:40px;
 }
 
 .login{
-margin:30px;
+margin-bottom:80px;
 background:white;
-padding:18px 35px;
+padding:20px 40px;
 border-radius:50px;
-font-size:20px;
+font-size:22px;
 cursor:pointer;
 box-shadow:0 10px 20px rgba(0,0,0,.08);
 }
 
 nav{
-position:absolute;
-bottom:40px;
 display:flex;
 gap:25px;
+margin-top:40px;
 }
 
 nav a{
@@ -82,13 +89,13 @@ transform:translateY(-6px);
 }
 
 section{
-padding:90px;
+padding:100px;
 }
 
 h2{
 text-align:center;
 font-size:50px;
-margin-bottom:50px;
+margin-bottom:60px;
 color:#2ca23b;
 }
 
@@ -118,6 +125,7 @@ border-radius:20px;
 .recipe{
 padding:25px;
 line-height:1.8;
+font-size:20px;
 }
 
 .comment-box{
@@ -161,10 +169,17 @@ font-size:20px;
 
 <div class="hero">
 
-<h1>CocinaFácil</h1>
+<h1>Al_Toque</h1>
+
+<div class="fundadores">
+Fundadores:<br>
+Mallma Espinoza Adrian Arturo<br>
+Ramirez Dominguez Sharon Dayana<br>
+Valderrama Rojas Carlos Angel
+</div>
 
 <p>
-Nuestro equipo creó esta plataforma porque detectamos que muchos estudiantes universitarios tienen mala alimentación debido al tiempo limitado, desconocimiento nutricional y facilidad de consumir comida poco saludable. CocinaFácil nace como una solución digital para enseñar recetas prácticas, económicas y nutritivas.
+Nuestro equipo creó esta plataforma porque detectamos que muchos estudiantes universitarios presentan malos hábitos alimenticios debido al tiempo limitado, desconocimiento nutricional y facilidad de consumir comida poco saludable. Al_Toque nace como solución digital educativa.
 </p>
 
 <div class="login">
@@ -181,86 +196,75 @@ Nuestro equipo creó esta plataforma porque detectamos que muchos estudiantes un
 
 <section id="videos">
 
-<h2>Batidos Nutritivos</h2>
+<h2>🥤 Batidos Nutritivos</h2>
 <div class="grid">
-<div class="card"><video controls src="1.mp4"></video></div>
-<div class="card"><video controls src="2.mp4"></video></div>
-<div class="card"><video controls src="3.mp4"></video></div>
-</div>
-
-<h2>Comidas Saludables</h2>
-<div class="grid">
-<div class="card"><video controls src="4.mp4"></video></div>
-<div class="card"><video controls src="5.mp4"></video></div>
-<div class="card"><video controls src="6.mp4"></video></div>
-<div class="card"><video controls src="7.mp4"></video></div>
-<div class="card"><video controls src="8.mp4"></video></div>
-<div class="card"><video controls src="9.mp4"></video></div>
-</div>
-
-<h2>Recetas Universitarias</h2>
-<div class="grid">
-<div class="card"><video controls src="10.mp4"></video></div>
 <div class="card"><video controls src="11.mp4"></video></div>
 <div class="card"><video controls src="12.mp4"></video></div>
 <div class="card"><video controls src="13.mp4"></video></div>
 <div class="card"><video controls src="14.mp4"></video></div>
 <div class="card"><video controls src="15.mp4"></video></div>
 <div class="card"><video controls src="16.mp4"></video></div>
-<div class="card"><video controls src="17.mp4"></video></div>
-<div class="card"><video controls src="18.mp4"></video></div>
+</div>
+
+<h2>🍰 Postres Saludables</h2>
+<div class="grid">
+<div class="card"><video controls src="5.mp4"></video></div>
+<div class="card"><video controls src="6.mp4"></video></div>
+<div class="card"><video controls src="8.mp4"></video></div>
+<div class="card"><video controls src="9.mp4"></video></div>
 <div class="card"><video controls src="19.mp4"></video></div>
+<div class="card"><video controls src="18.mp4"></video></div>
+<div class="card"><video controls src="10.mp4"></video></div>
+</div>
+
+<h2>🥗 Comidas Saludables</h2>
+<div class="grid">
+<div class="card"><video controls src="1.mp4"></video></div>
+<div class="card"><video controls src="2.mp4"></video></div>
+<div class="card"><video controls src="3.mp4"></video></div>
+<div class="card"><video controls src="4.mp4"></video></div>
+<div class="card"><video controls src="7.mp4"></video></div>
+<div class="card"><video controls src="17.mp4"></video></div>
 </div>
 
 </section>
 
 <section id="recetas">
 
-<h2>Recetas Escritas Saludables</h2>
+<h2>Recetas Escritas</h2>
 
 <div class="card recipe">
-<h3>🥗 Ensalada energética</h3>
-Espinaca, pollo a la plancha, quinua cocida, tomate y palta.
+🥗 Ensalada energética: espinaca, quinua, pollo, tomate y palta.
 </div>
 
 <div class="card recipe">
-<h3>🥤 Smoothie proteico</h3>
-Plátano, avena, leche vegetal, mantequilla de maní.
+🥤 Smoothie proteico: plátano, avena, leche vegetal y mantequilla de maní.
 </div>
 
 <div class="card recipe">
-<h3>🍝 Pasta saludable</h3>
-Pasta integral, verduras salteadas y pechuga de pollo.
+🍝 Pasta integral saludable con verduras salteadas.
 </div>
 
 </section>
 
 <section id="sugerencias">
 
-<h2>Comunidad CocinaFácil</h2>
+<h2>Comunidad Al_Toque</h2>
 
 <div class="comment-box">
 <input placeholder="Tu nombre">
-<textarea placeholder="Escribe tu comentario, sugerencia o receta saludable"></textarea>
+<textarea placeholder="Escribe tu comentario o sugerencia"></textarea>
 <button>Publicar</button>
 </div>
 
-<div class="comment-box">
-<strong>Ana:</strong> Excelente idea para estudiantes con poco tiempo.
-</div>
-
-<div class="comment-box">
-<strong>Carlos:</strong> Me gustaría más recetas económicas.
-</div>
-
-<div class="comment-box">
-<strong>Lucía:</strong> Los batidos ayudan mucho antes de estudiar.
-</div>
+<div class="comment-box"><strong>Ana:</strong> Excelente iniciativa.</div>
+<div class="comment-box"><strong>Carlos:</strong> Muy útil para estudiantes.</div>
+<div class="comment-box"><strong>Lucía:</strong> Más recetas económicas por favor.</div>
 
 </section>
 
 <footer>
-© 2026 CocinaFácil | Universidad César Vallejo
+© 2026 Al_Toque | Universidad César Vallejo
 </footer>
 
 </body>
