@@ -3,308 +3,453 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Al_Toque</title>
+<title>CocinaFácil</title>
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
 
 body{
-background:linear-gradient(135deg,#e9ffe7,#ffffff);
-color:#222;
-overflow-x:hidden;
-position:relative;
+    background:#f8f8f8;
+    color:#333;
 }
 
-body::before{
-content:"🥗 🍎 🥑 🥤 🍌 🥬 🥕 🍉 🍍 🥝 🍓 🥦 🥬 🍇 🍊 🥗 🥤 🍎 🥑 🥕 🍌 🥬 🍍 🥝 🍉 🍓 🥦";
-position:fixed;
-font-size:55px;
-opacity:.14;
-width:100%;
-height:100%;
-display:flex;
-flex-wrap:wrap;
-justify-content:space-around;
-align-content:space-around;
-pointer-events:none;
-z-index:-1;
-line-height:2.5;
+/* ===== HEADER ===== */
+
+header{
+    width:100%;
+    background:white;
+    box-shadow:0px 2px 8px rgba(0,0,0,0.1);
+    padding:15px 40px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:100;
 }
 
-.hero{
-min-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding:80px;
-}
-
-.logo-ucv{
-width:220px;
-margin-bottom:25px;
-opacity:.92;
-}
-
-.hero h1{
-font-size:85px;
-color:#2ca23b;
-margin-bottom:25px;
-}
-
-.fundadores-box{
-width:85%;
-max-width:1200px;
-text-align:left;
-margin-bottom:40px;
-padding-left:15px;
-color:rgba(0,0,0,.48);
-font-size:20px;
-font-weight:bold;
-line-height:1.8;
-}
-
-.hero p{
-font-size:24px;
-max-width:1000px;
-line-height:1.8;
-margin-bottom:40px;
-}
-
-.login{
-margin-bottom:90px;
-background:white;
-padding:20px 40px;
-border-radius:50px;
-font-size:22px;
-cursor:pointer;
-box-shadow:0 10px 20px rgba(0,0,0,.08);
-}
-
-nav{
-display:flex;
-gap:25px;
-margin-top:50px;
+.logo{
+    font-size:30px;
+    font-weight:bold;
+    color:#4CAF50;
 }
 
 nav a{
-padding:18px 35px;
-background:#2ca23b;
-color:white;
-text-decoration:none;
-border-radius:20px;
-font-size:20px;
-transition:.3s;
+    text-decoration:none;
+    margin:0 15px;
+    color:#333;
+    font-weight:bold;
+    transition:0.3s;
 }
 
 nav a:hover{
-transform:translateY(-6px);
+    color:#ff7b00;
 }
 
-section{
-padding:100px;
+.search-box input{
+    padding:10px;
+    border-radius:20px;
+    border:none;
+    outline:none;
+    background:#f0f0f0;
 }
 
-h2{
-text-align:center;
-font-size:50px;
-margin-bottom:60px;
-color:#2ca23b;
+/* ===== HERO ===== */
+
+.hero{
+    width:100%;
+    height:500px;
+    background:url('https://images.unsplash.com/photo-1547592180-85f173990554') center/cover;
+    display:flex;
+    align-items:center;
+    padding-left:60px;
+    color:white;
 }
 
-.grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:25px;
+.hero-content{
+    background:rgba(0,0,0,0.5);
+    padding:40px;
+    border-radius:15px;
+    max-width:500px;
 }
 
-.card{
-background:white;
-padding:20px;
-border-radius:25px;
-box-shadow:0 10px 20px rgba(0,0,0,.08);
-transition:.3s;
+.hero h1{
+    font-size:50px;
+    margin-bottom:20px;
 }
 
-.card:hover{
-transform:translateY(-8px);
+.hero p{
+    font-size:20px;
+    margin-bottom:20px;
 }
 
-video{
-width:100%;
-border-radius:20px;
+.hero button{
+    padding:15px 30px;
+    border:none;
+    border-radius:30px;
+    background:#ff7b00;
+    color:white;
+    font-size:18px;
+    cursor:pointer;
+    transition:0.3s;
 }
 
-.recipe{
-padding:25px;
-line-height:1.8;
-font-size:20px;
+.hero button:hover{
+    background:#ff5100;
 }
 
-.comment-box{
-background:white;
-padding:30px;
-border-radius:25px;
-margin:20px auto;
-max-width:900px;
-box-shadow:0 10px 20px rgba(0,0,0,.08);
+/* ===== CATEGORIAS ===== */
+
+.section-title{
+    text-align:center;
+    margin:60px 0 30px;
+    font-size:35px;
 }
 
-textarea,input{
-width:100%;
-padding:18px;
-margin:12px 0;
-border-radius:15px;
-border:1px solid #ccc;
-font-size:17px;
+.categories{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:30px;
+    padding:0 50px;
 }
 
-button{
-background:#2ca23b;
-color:white;
-padding:18px 30px;
-border:none;
-border-radius:15px;
-font-size:18px;
-cursor:pointer;
+.category-card{
+    background:white;
+    border-radius:20px;
+    padding:25px;
+    text-align:center;
+    box-shadow:0px 4px 12px rgba(0,0,0,0.1);
+    transition:0.3s;
 }
+
+.category-card:hover{
+    transform:translateY(-10px);
+}
+
+.category-card img{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:15px;
+}
+
+.category-card h3{
+    margin-bottom:10px;
+    color:#ff7b00;
+}
+
+/* ===== RECETAS ===== */
+
+.recipes{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+    padding:0 50px 60px;
+}
+
+.recipe-card{
+    background:white;
+    border-radius:20px;
+    overflow:hidden;
+    box-shadow:0px 4px 12px rgba(0,0,0,0.1);
+    transition:0.3s;
+}
+
+.recipe-card:hover{
+    transform:scale(1.03);
+}
+
+.recipe-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.recipe-content{
+    padding:20px;
+}
+
+.recipe-content h3{
+    margin-bottom:10px;
+}
+
+.recipe-content p{
+    color:#666;
+}
+
+/* ===== TESTIMONIOS ===== */
+
+.testimonials{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
+    padding:0 50px 60px;
+}
+
+.testimonial{
+    background:white;
+    padding:30px;
+    border-radius:20px;
+    box-shadow:0px 4px 12px rgba(0,0,0,0.1);
+    text-align:center;
+}
+
+.testimonial img{
+    width:90px;
+    height:90px;
+    border-radius:50%;
+    object-fit:cover;
+    margin-bottom:15px;
+}
+
+/* ===== VIDEO ===== */
+
+.video-section{
+    padding:50px;
+    text-align:center;
+}
+
+.video-container{
+    max-width:900px;
+    margin:auto;
+    overflow:hidden;
+    border-radius:20px;
+    box-shadow:0px 4px 12px rgba(0,0,0,0.2);
+}
+
+.video-container iframe{
+    width:100%;
+    height:500px;
+}
+
+/* ===== FOOTER ===== */
 
 footer{
-background:white;
-padding:35px;
-text-align:center;
-font-size:20px;
+    background:#222;
+    color:white;
+    text-align:center;
+    padding:40px;
+    margin-top:50px;
 }
+
+footer p{
+    margin:10px 0;
+}
+
+/* ===== RESPONSIVE ===== */
+
+@media(max-width:768px){
+
+    header{
+        flex-direction:column;
+        gap:20px;
+    }
+
+    .hero{
+        height:400px;
+        padding:20px;
+    }
+
+    .hero h1{
+        font-size:35px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .video-container iframe{
+        height:300px;
+    }
+}
+
 </style>
 </head>
 
 <body>
 
-<div class="hero">
+<!-- ===== HEADER ===== -->
 
-<img src="20.png" class="logo-ucv">
+<header>
 
-<h1>Al_Toque</h1>
-
-<div class="fundadores-box">
-Fundadores:<br>
-Mallma Espinoza Adrian Arturo<br>
-Ramirez Dominguez Sharon Dayana<br>
-Valderrama Rojas Carlos Angel
-</div>
-
-<p>
-Nuestro equipo creó esta plataforma porque detectamos que muchos estudiantes universitarios presentan malos hábitos alimenticios debido al tiempo limitado, desconocimiento nutricional y facilidad de consumir comida poco saludable. Al_Toque nace como solución digital educativa impulsada desde la Universidad César Vallejo.
-</p>
-
-<div class="login">
-🔐 Iniciar sesión con Google
-</div>
+<div class="logo">CocinaFácil</div>
 
 <nav>
-<a href="#videos">Videos</a>
-<a href="#recetas">Recetas</a>
-<a href="#sugerencias">Sugerencias</a>
+<a href="#">Inicio</a>
+<a href="#">Recetas</a>
+<a href="#">Categorías</a>
+<a href="#">Blog</a>
+<a href="#">Nosotros</a>
+<a href="#">Contacto</a>
 </nav>
 
+<div class="search-box">
+<input type="text" placeholder="Buscar...">
 </div>
 
-<section id="videos">
+</header>
 
-<h2>🥤 Batidos Nutritivos</h2>
-<div class="grid">
-<div class="card"><video controls src="11.mp4"></video></div>
-<div class="card"><video controls src="12.mp4"></video></div>
-<div class="card"><video controls src="13.mp4"></video></div>
-<div class="card"><video controls src="14.mp4"></video></div>
-<div class="card"><video controls src="15.mp4"></video></div>
-<div class="card"><video controls src="16.mp4"></video></div>
-</div>
+<!-- ===== HERO ===== -->
 
-<h2>🍰 Postres Saludables</h2>
-<div class="grid">
-<div class="card"><video controls src="5.mp4"></video></div>
-<div class="card"><video controls src="6.mp4"></video></div>
-<div class="card"><video controls src="8.mp4"></video></div>
-<div class="card"><video controls src="9.mp4"></video></div>
-<div class="card"><video controls src="19.mp4"></video></div>
-<div class="card"><video controls src="18.mp4"></video></div>
-<div class="card"><video controls src="10.mp4"></video></div>
-</div>
+<section class="hero">
 
-<h2>🥗 Comidas Saludables</h2>
-<div class="grid">
-<div class="card"><video controls src="1.mp4"></video></div>
-<div class="card"><video controls src="2.mp4"></video></div>
-<div class="card"><video controls src="3.mp4"></video></div>
-<div class="card"><video controls src="4.mp4"></video></div>
-<div class="card"><video controls src="7.mp4"></video></div>
+<div class="hero-content">
+
+<h1>Tu Guía Diaria para Recetas Rápidas y Saludables</h1>
+
+<p>
+Aquí puedes agregar una descripción personalizada sobre tu página web.
+</p>
+
+<button>Explorar Recetas</button>
+
 </div>
 
 </section>
 
-<section id="recetas">
+<!-- ===== CATEGORIAS ===== -->
 
-<h2>Recetas Escritas</h2>
+<h2 class="section-title">Categorías Destacadas</h2>
 
-<div class="card recipe">🥗 Ensalada energética: espinaca, quinua, pollo, tomate y palta.</div>
-<div class="card recipe">🥤 Smoothie proteico: plátano, avena, leche vegetal y mantequilla de maní.</div>
-<div class="card recipe">🍝 Pasta integral saludable con verduras salteadas.</div>
+<section class="categories">
 
-</section>
-
-<section id="sugerencias">
-
-<h2>Comunidad Al_Toque</h2>
-
-<div class="comment-box">
-<input id="nombre" placeholder="Tu nombre">
-<textarea id="comentario" placeholder="Escribe tu comentario o sugerencia"></textarea>
-<button onclick="publicarComentario()">Publicar</button>
+<div class="category-card">
+<img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836">
+<h3>Desayunos</h3>
+<p>Espacio para descripción.</p>
 </div>
 
-<div id="comentarios-container"></div>
+<div class="category-card">
+<img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c">
+<h3>Almuerzos</h3>
+<p>Espacio para descripción.</p>
+</div>
+
+<div class="category-card">
+<img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd">
+<h3>Cenas</h3>
+<p>Espacio para descripción.</p>
+</div>
+
+<div class="category-card">
+<img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e">
+<h3>Postres</h3>
+<p>Espacio para descripción.</p>
+</div>
 
 </section>
+
+<!-- ===== RECETAS ===== -->
+
+<h2 class="section-title">Recetas Recientes</h2>
+
+<section class="recipes">
+
+<div class="recipe-card">
+<img src="https://images.unsplash.com/photo-1552332386-f8dd00dc2f85">
+<div class="recipe-content">
+<h3>Tacos Saludables</h3>
+<p>
+Espacio para agregar descripción de receta.
+</p>
+</div>
+</div>
+
+<div class="recipe-card">
+<img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd">
+<div class="recipe-content">
+<h3>Ensalada Fresca</h3>
+<p>
+Espacio para agregar descripción de receta.
+</p>
+</div>
+</div>
+
+<div class="recipe-card">
+<img src="https://images.unsplash.com/photo-1547592180-85f173990554">
+<div class="recipe-content">
+<h3>Comida Saludable</h3>
+<p>
+Espacio para agregar descripción de receta.
+</p>
+</div>
+</div>
+
+</section>
+
+<!-- ===== TESTIMONIOS ===== -->
+
+<h2 class="section-title">Testimonios</h2>
+
+<section class="testimonials">
+
+<div class="testimonial">
+<img src="https://randomuser.me/api/portraits/women/44.jpg">
+<h3>Nombre Usuario</h3>
+<p>
+Aquí puedes escribir un testimonio o comentario.
+</p>
+</div>
+
+<div class="testimonial">
+<img src="https://randomuser.me/api/portraits/men/32.jpg">
+<h3>Nombre Usuario</h3>
+<p>
+Aquí puedes escribir un testimonio o comentario.
+</p>
+</div>
+
+</section>
+
+<!-- ===== VIDEO ===== -->
+
+<h2 class="section-title">Video Tutoriales</h2>
+
+<section class="video-section">
+
+<div class="video-container">
+
+<iframe 
+src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+title="Video"
+frameborder="0"
+allowfullscreen>
+</iframe>
+
+</div>
+
+</section>
+
+<!-- ===== FOOTER ===== -->
 
 <footer>
-© 2026 Al_Toque | Universidad César Vallejo
+
+<h2>CocinaFácil</h2>
+
+<p>
+Espacio para información adicional.
+</p>
+
+<p>
+Correo: ____________
+</p>
+
+<p>
+Teléfono: ____________
+</p>
+
+<p>
+© 2026 Todos los derechos reservados
+</p>
+
 </footer>
-
-<script>
-let comentarios = JSON.parse(localStorage.getItem("comentarios")) || [
-{nombre:"Ana",texto:"Excelente iniciativa."},
-{nombre:"Carlos",texto:"Muy útil para estudiantes."},
-{nombre:"Lucía",texto:"Más recetas económicas por favor."}
-];
-
-function mostrarComentarios(){
-let contenedor=document.getElementById("comentarios-container");
-contenedor.innerHTML="";
-comentarios.forEach(c=>{
-contenedor.innerHTML+=`
-<div class="comment-box">
-<strong>${c.nombre}:</strong> ${c.texto}
-</div>`;
-});
-}
-
-function publicarComentario(){
-let nombre=document.getElementById("nombre").value.trim();
-let comentario=document.getElementById("comentario").value.trim();
-
-if(nombre && comentario){
-comentarios.push({nombre:nombre,texto:comentario});
-localStorage.setItem("comentarios",JSON.stringify(comentarios));
-document.getElementById("nombre").value="";
-document.getElementById("comentario").value="";
-mostrarComentarios();
-}
-}
-
-mostrarComentarios();
-</script>
 
 </body>
 </html>
