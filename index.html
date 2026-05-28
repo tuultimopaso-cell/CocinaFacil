@@ -905,59 +905,7 @@ info.style.display='block';
 }
 
 </script>
-```
 
-<!-- COMUNIDAD -->
-
-<h2 class="section-title" id="comunidad">Comunidad Al_Toque</h2>
-
-<div class="comment-box">
-
-<input id="nombre" placeholder="Tu nombre">
-
-<textarea id="comentario" placeholder="Escribe tu comentario"></textarea>
-
-<button onclick="publicarComentario()">Publicar</button>
-
-</div>
-
-<div id="comentarios-container"></div>
-
-<footer>
-
-© 2026 Al_Toque | Universidad César Vallejo
-
-</footer>
-
-<script>
-
-function togglePlaylist(id){
-
-let playlists=document.querySelectorAll(".playlist-grid");
-
-playlists.forEach(p=>{
-
-if(p.id!==id){
-
-p.style.display="none";
-
-}
-
-});
-
-let actual=document.getElementById(id);
-
-if(actual.style.display==="grid"){
-
-actual.style.display="none";
-
-}else{
-
-actual.style.display="grid";
-
-}
-
-}
 
 /* COMENTARIOS */
 
