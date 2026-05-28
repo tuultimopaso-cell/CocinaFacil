@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -142,7 +143,7 @@ border-radius:25px;
 .fundadores{
 background:#eef8ea;
 padding:35px;
-padding-left:60px;
+padding-left:20px;
 line-height:2;
 font-size:18px;
 color:rgba(0,0,0,.55);
@@ -161,7 +162,7 @@ color:#2ca23b;
 
 .categorias{
 display:grid;
-grid-template-columns:repeat(4,1fr);
+grid-template-columns:repeat(3,1fr);
 gap:30px;
 padding:0 70px;
 }
@@ -173,6 +174,7 @@ border-radius:25px;
 text-align:center;
 box-shadow:0 5px 15px rgba(0,0,0,.08);
 transition:.3s;
+cursor:pointer;
 }
 
 .categoria:hover{
@@ -197,7 +199,7 @@ font-size:30px;
 
 .grid-videos{
 display:grid;
-grid-template-columns:repeat(3,1fr);
+grid-template-columns:repeat(2,1fr);
 gap:35px;
 padding:0 70px 70px;
 }
@@ -208,6 +210,7 @@ border-radius:25px;
 overflow:hidden;
 box-shadow:0 5px 15px rgba(0,0,0,.08);
 transition:.3s;
+cursor:pointer;
 }
 
 .card:hover{
@@ -236,20 +239,28 @@ line-height:1.6;
 
 /* PLAYLISTS */
 
-.playlist{
+.playlist-grid{
+
 display:none;
+
+grid-template-columns:repeat(2,1fr);
+
+gap:15px;
+
 padding:20px;
+
 animation:aparecer .4s ease;
+
 }
 
-.playlist video{
+.playlist-grid video{
+
 width:100%;
-border-radius:15px;
-margin-bottom:15px;
-}
 
-.categoria-click{
-cursor:pointer;
+border-radius:15px;
+
+box-shadow:0 3px 10px rgba(0,0,0,.15);
+
 }
 
 @keyframes aparecer{
@@ -405,9 +416,13 @@ Vega Asencios Anais
 
 </section>
 
+<!-- CATEGORIAS DESTACADAS -->
+
 <h2 class="section-title">Categorías Destacadas</h2>
 
 <section class="categorias">
+
+<!-- DESAYUNOS -->
 
 <div class="categoria">
 <img src="https://images.unsplash.com/photo-1482049016688-2d3e1b311543">
@@ -415,11 +430,32 @@ Vega Asencios Anais
 <p>Opciones ligeras y energéticas.</p>
 </div>
 
-<div class="categoria">
+<!-- ALMUERZOS -->
+
+<div class="categoria" onclick="togglePlaylist('almuerzos')">
+
 <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c">
+
 <h3>Almuerzos</h3>
-<p>Comidas balanceadas y nutritivas.</p>
+
+<p>
+Comidas balanceadas y nutritivas.
+</p>
+
+<div id="almuerzos" class="playlist-grid">
+
+<video controls src="1.mp4"></video>
+<video controls src="2.mp4"></video>
+<video controls src="3.mp4"></video>
+<video controls src="4.mp4"></video>
+<video controls src="7.mp4"></video>
+<video controls src="17.mp4"></video>
+
 </div>
+
+</div>
+
+<!-- CENAS -->
 
 <div class="categoria">
 <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd">
@@ -427,13 +463,9 @@ Vega Asencios Anais
 <p>Platos saludables y ligeros.</p>
 </div>
 
-<div class="categoria">
-<img src="https://images.unsplash.com/photo-1488477181946-6428a0291777">
-<h3>Postres</h3>
-<p>Opciones dulces saludables.</p>
-</div>
-
 </section>
+
+<!-- RECETAS RECIENTES -->
 
 <h2 class="section-title">Recetas Recientes</h2>
 
@@ -441,7 +473,7 @@ Vega Asencios Anais
 
 <!-- BATIDOS -->
 
-<div class="card categoria-click" onclick="togglePlaylist('batidos')">
+<div class="card" onclick="togglePlaylist('batidos')">
 
 <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc">
 
@@ -455,7 +487,7 @@ Batidos energéticos y saludables para estudiantes.
 
 </div>
 
-<div id="batidos" class="playlist">
+<div id="batidos" class="playlist-grid">
 
 <video controls src="11.mp4"></video>
 <video controls src="12.mp4"></video>
@@ -470,7 +502,7 @@ Batidos energéticos y saludables para estudiantes.
 
 <!-- POSTRES -->
 
-<div class="card categoria-click" onclick="togglePlaylist('postres')">
+<div class="card" onclick="togglePlaylist('postres')">
 
 <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777">
 
@@ -484,7 +516,7 @@ Opciones dulces y saludables sin excesos.
 
 </div>
 
-<div id="postres" class="playlist">
+<div id="postres" class="playlist-grid">
 
 <video controls src="5.mp4"></video>
 <video controls src="6.mp4"></video>
@@ -498,36 +530,9 @@ Opciones dulces y saludables sin excesos.
 
 </div>
 
-<!-- COMIDAS -->
-
-<div class="card categoria-click" onclick="togglePlaylist('comidas')">
-
-<img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061">
-
-<div class="card-content">
-
-<h3>Comidas Saludables</h3>
-
-<p>
-Platos balanceados y nutritivos para universitarios.
-</p>
-
-</div>
-
-<div id="comidas" class="playlist">
-
-<video controls src="1.mp4"></video>
-<video controls src="2.mp4"></video>
-<video controls src="3.mp4"></video>
-<video controls src="4.mp4"></video>
-<video controls src="7.mp4"></video>
-<video controls src="17.mp4"></video>
-
-</div>
-
-</div>
-
 </section>
+
+<!-- RECETAS ESCRITAS -->
 
 <h2 class="section-title" id="recetas">Recetas Escritas</h2>
 
@@ -546,6 +551,8 @@ Platos balanceados y nutritivos para universitarios.
 </div>
 
 </section>
+
+<!-- COMUNIDAD -->
 
 <h2 class="section-title" id="comunidad">Comunidad Al_Toque</h2>
 
@@ -573,22 +580,28 @@ Platos balanceados y nutritivos para universitarios.
 
 function togglePlaylist(id){
 
-let playlists=document.querySelectorAll(".playlist");
+let playlists=document.querySelectorAll(".playlist-grid");
 
 playlists.forEach(p=>{
 
 if(p.id!==id){
+
 p.style.display="none";
+
 }
 
 });
 
 let actual=document.getElementById(id);
 
-if(actual.style.display==="block"){
+if(actual.style.display==="grid"){
+
 actual.style.display="none";
+
 }else{
-actual.style.display="block";
+
+actual.style.display="grid";
+
 }
 
 }
@@ -654,3 +667,4 @@ mostrarComentarios();
 
 </body>
 </html>
+```
