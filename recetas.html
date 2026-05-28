@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 
@@ -20,7 +19,7 @@ font-family:Arial,sans-serif;
 
 body{
 
-background-color:#f4f4f4;
+background:#f4f4f4;
 
 background-image:
 url('https://cdn-icons-png.flaticon.com/512/1046/1046784.png'),
@@ -35,14 +34,11 @@ color:#222;
 
 }
 
-/* HEADER */
-
 .header{
 
 text-align:center;
 padding:70px 20px 40px;
 background:rgba(255,255,255,.92);
-backdrop-filter:blur(5px);
 
 }
 
@@ -62,8 +58,6 @@ font-size:21px;
 line-height:1.8;
 
 }
-
-/* BOTON */
 
 .home-btn{
 
@@ -85,8 +79,6 @@ transform:scale(1.05);
 
 }
 
-/* TITULOS */
-
 .section-title{
 
 text-align:center;
@@ -95,8 +87,6 @@ margin:60px 0 30px;
 color:#2ca23b;
 
 }
-
-/* NIVELES */
 
 .niveles-container{
 
@@ -114,45 +104,26 @@ box-shadow:0 5px 15px rgba(0,0,0,.1);
 
 }
 
-/* TITULO NIVEL */
-
 .nivel-titulo{
 
 padding:28px;
 font-size:32px;
 cursor:pointer;
-transition:.3s;
-
-}
-
-.nivel-titulo:hover{
-
-filter:brightness(.95);
+color:white;
 
 }
 
 .facil{
-
 background:#44b95e;
-color:white;
-
 }
 
 .intermedio{
-
 background:#e2aa22;
-color:white;
-
 }
 
 .avanzado{
-
 background:#d64545;
-color:white;
-
 }
-
-/* CONTENIDO */
 
 .nivel-contenido{
 
@@ -160,8 +131,6 @@ display:none;
 padding:25px;
 
 }
-
-/* RECETAS */
 
 .receta-item{
 
@@ -189,8 +158,6 @@ background:#e8e8e8;
 
 }
 
-/* INFO */
-
 .receta-info{
 
 display:none;
@@ -212,8 +179,6 @@ color:#2ca23b;
 
 }
 
-/* FOOTER */
-
 footer{
 
 text-align:center;
@@ -224,8 +189,6 @@ font-size:18px;
 margin-top:40px;
 
 }
-
-/* RESPONSIVE */
 
 @media(max-width:900px){
 
@@ -255,8 +218,6 @@ font-size:26px;
 
 <body>
 
-<!-- HEADER -->
-
 <section class="header">
 
 <h1>🍽 Recetas Al_Toque</h1>
@@ -265,7 +226,7 @@ font-size:26px;
 
 Bienvenido al apartado oficial de recetas saludables de Al_Toque.
 Aquí encontrarás recetas organizadas por niveles de dificultad,
-acompañadas de información nutricional, beneficios y preparación detallada.
+acompañadas de información nutricional y beneficios saludables.
 
 </p>
 
@@ -275,17 +236,13 @@ acompañadas de información nutricional, beneficios y preparación detallada.
 
 </section>
 
-<!-- TITULO -->
-
 <h2 class="section-title">
 Niveles de Cocina Saludable
 </h2>
 
-<!-- NIVELES -->
-
 <section class="niveles-container">
 
-<!-- FACIL -->
+<!-- NIVEL FACIL -->
 
 <div class="nivel-box">
 
@@ -294,6 +251,8 @@ Niveles de Cocina Saludable
 </h3>
 
 <div id="facil" class="nivel-contenido">
+
+<!-- RECETA 1 -->
 
 <div class="receta-item">
 
@@ -306,44 +265,24 @@ Niveles de Cocina Saludable
 <h4>Batido Energético de Avena</h4>
 
 <p><b>⏱ Tiempo:</b> 5 minutos</p>
-
 <p><b>🔥 Calorías:</b> 250 kcal</p>
-
 <p><b>💪 Proteínas:</b> 8g</p>
-
 <p><b>💊 Vitaminas:</b> B6, calcio y hierro</p>
-
-<p><b>🥣 Ingredientes:</b></p>
+<p><b>🧠 Beneficios:</b> Mejora energía y concentración.</p>
+<p><b>💰 Costo:</b> Económico</p>
 
 <ul>
-
 <li>1 plátano</li>
 <li>2 cucharadas de avena</li>
 <li>1 vaso de leche</li>
 <li>1 cucharada de miel</li>
-
 </ul>
 
-<p><b>🍳 Preparación:</b></p>
-
-<p>
-
-Licuar todos los ingredientes durante 2 minutos
-hasta obtener una mezcla uniforme.
-
-</p>
-
-<p><b>🌟 Beneficios:</b></p>
-
-<p>
-
-Aporta energía rápida, mejora la concentración y
-ayuda al rendimiento académico.
-
-</p>
+</div>
 
 </div>
-</div>
+
+<!-- RECETA 2 -->
 
 <div class="receta-item">
 
@@ -356,14 +295,186 @@ ayuda al rendimiento académico.
 <h4>Tostadas con Palta</h4>
 
 <p><b>⏱ Tiempo:</b> 10 minutos</p>
-
 <p><b>🔥 Calorías:</b> 320 kcal</p>
-
 <p><b>💪 Proteínas:</b> 12g</p>
-
 <p><b>💊 Vitaminas:</b> E, C y potasio</p>
+<p><b>🧠 Beneficios:</b> Grasas saludables para el cerebro.</p>
 
-<p><b>🌟 Beneficios:</b> Grasas saludables para el cerebro.</p>
+</div>
+
+</div>
+
+<!-- RECETA 3 -->
+
+<div class="receta-item">
+
+<button onclick="toggleReceta(this)" class="receta-btn">
+🍓 Yogurt con Frutas
+</button>
+
+<div class="receta-info">
+
+<h4>Yogurt con Frutas</h4>
+
+<p><b>⏱ Tiempo:</b> 4 minutos</p>
+<p><b>🔥 Calorías:</b> 210 kcal</p>
+<p><b>💪 Proteínas:</b> 7g</p>
+<p><b>💊 Vitaminas:</b> C y calcio</p>
+<p><b>🧠 Beneficios:</b> Mejora digestión y fortalece huesos.</p>
+
+</div>
+
+</div>
+
+<!-- RECETA 4 -->
+
+<div class="receta-item">
+
+<button onclick="toggleReceta(this)" class="receta-btn">
+🍌 Panqueques de Avena
+</button>
+
+<div class="receta-info">
+
+<h4>Panqueques de Avena</h4>
+
+<p><b>⏱ Tiempo:</b> 15 minutos</p>
+<p><b>🔥 Calorías:</b> 350 kcal</p>
+<p><b>💪 Proteínas:</b> 10g</p>
+<p><b>💊 Vitaminas:</b> Complejo B</p>
+<p><b>🧠 Beneficios:</b> Energía prolongada.</p>
+
+</div>
+
+</div>
+
+<!-- RECETA 5 -->
+
+<div class="receta-item">
+
+<button onclick="toggleReceta(this)" class="receta-btn">
+🥗 Ensalada Fresca
+</button>
+
+<div class="receta-info">
+
+<h4>Ensalada Fresca</h4>
+
+<p><b>⏱ Tiempo:</b> 7 minutos</p>
+<p><b>🔥 Calorías:</b> 180 kcal</p>
+<p><b>💪 Proteínas:</b> 5g</p>
+<p><b>💊 Vitaminas:</b> A y C</p>
+<p><b>🧠 Beneficios:</b> Rica en fibra.</p>
+
+</div>
+
+</div>
+
+<!-- RECETA 6 -->
+
+<div class="receta-item">
+
+<button onclick="toggleReceta(this)" class="receta-btn">
+🍎 Manzana con Mantequilla de Maní
+</button>
+
+<div class="receta-info">
+
+<h4>Manzana con Mantequilla de Maní</h4>
+
+<p><b>⏱ Tiempo:</b> 3 minutos</p>
+<p><b>🔥 Calorías:</b> 200 kcal</p>
+<p><b>💪 Proteínas:</b> 6g</p>
+<p><b>💊 Vitaminas:</b> C y antioxidantes</p>
+<p><b>🧠 Beneficios:</b> Snack energético saludable.</p>
+
+</div>
+
+</div>
+
+<!-- RECETA 7 -->
+
+<div class="receta-item">
+
+<button onclick="toggleReceta(this)" class="receta-btn">
+🥪 Sandwich Integral
+</button>
+
+<div class="receta-info">
+
+<h4>Sandwich Integral</h4>
+
+<p><b>⏱ Tiempo:</b> 8 minutos</p>
+<p><b>🔥 Calorías:</b> 330 kcal</p>
+<p><b>💪 Proteínas:</b> 15g</p>
+<p><b>💊 Vitaminas:</b> B12 y hierro</p>
+<p><b>🧠 Beneficios:</b> Desayuno rápido y nutritivo.</p>
+
+</div>
+
+</div>
+
+<!-- RECETA 8 -->
+
+<div class="receta-item">
+
+<button onclick="toggleReceta(this)" class="receta-btn">
+🥤 Smoothie Verde
+</button>
+
+<div class="receta-info">
+
+<h4>Smoothie Verde</h4>
+
+<p><b>⏱ Tiempo:</b> 5 minutos</p>
+<p><b>🔥 Calorías:</b> 190 kcal</p>
+<p><b>💪 Proteínas:</b> 5g</p>
+<p><b>💊 Vitaminas:</b> A y hierro</p>
+<p><b>🧠 Beneficios:</b> Rico en antioxidantes.</p>
+
+</div>
+
+</div>
+
+<!-- RECETA 9 -->
+
+<div class="receta-item">
+
+<button onclick="toggleReceta(this)" class="receta-btn">
+🍞 Avena con Frutas
+</button>
+
+<div class="receta-info">
+
+<h4>Avena con Frutas</h4>
+
+<p><b>⏱ Tiempo:</b> 6 minutos</p>
+<p><b>🔥 Calorías:</b> 280 kcal</p>
+<p><b>💪 Proteínas:</b> 9g</p>
+<p><b>💊 Vitaminas:</b> Complejo B</p>
+<p><b>🧠 Beneficios:</b> Aporta fibra y energía.</p>
+
+</div>
+
+</div>
+
+<!-- RECETA 10 -->
+
+<div class="receta-item">
+
+<button onclick="toggleReceta(this)" class="receta-btn">
+🥚 Huevos Revueltos Saludables
+</button>
+
+<div class="receta-info">
+
+<h4>Huevos Revueltos Saludables</h4>
+
+<p><b>⏱ Tiempo:</b> 10 minutos</p>
+<p><b>🔥 Calorías:</b> 260 kcal</p>
+<p><b>💪 Proteínas:</b> 18g</p>
+<p><b>💊 Vitaminas:</b> D y B12</p>
+<p><b>🧠 Beneficios:</b> Excelente fuente de proteína.</p>
 
 </div>
 
@@ -371,9 +482,7 @@ ayuda al rendimiento académico.
 
 </div>
 
-</div>
-
-<!-- INTERMEDIO -->
+<!-- NIVEL INTERMEDIO -->
 
 <div class="nivel-box">
 
@@ -383,35 +492,13 @@ ayuda al rendimiento académico.
 
 <div id="intermedio" class="nivel-contenido">
 
-<div class="receta-item">
-
-<button onclick="toggleReceta(this)" class="receta-btn">
-🍝 Pasta Integral con Pollo
-</button>
-
-<div class="receta-info">
-
-<h4>Pasta Integral con Pollo</h4>
-
-<p><b>⏱ Tiempo:</b> 25 minutos</p>
-
-<p><b>🔥 Calorías:</b> 520 kcal</p>
-
-<p><b>💪 Proteínas:</b> 28g</p>
-
-<p><b>💊 Vitaminas:</b> B12 y hierro</p>
-
-<p><b>🌟 Beneficios:</b> Excelente para recuperación muscular.</p>
+<p>Próximamente recetas intermedias.</p>
 
 </div>
 
 </div>
 
-</div>
-
-</div>
-
-<!-- AVANZADO -->
+<!-- NIVEL AVANZADO -->
 
 <div class="nivel-box">
 
@@ -421,29 +508,7 @@ ayuda al rendimiento académico.
 
 <div id="avanzado" class="nivel-contenido">
 
-<div class="receta-item">
-
-<button onclick="toggleReceta(this)" class="receta-btn">
-🍲 Lomo Saltado Saludable
-</button>
-
-<div class="receta-info">
-
-<h4>Lomo Saltado Saludable</h4>
-
-<p><b>⏱ Tiempo:</b> 45 minutos</p>
-
-<p><b>🔥 Calorías:</b> 620 kcal</p>
-
-<p><b>💪 Proteínas:</b> 35g</p>
-
-<p><b>💊 Vitaminas:</b> hierro y zinc</p>
-
-<p><b>🌟 Beneficios:</b> Alto contenido proteico y energético.</p>
-
-</div>
-
-</div>
+<p>Próximamente recetas avanzadas.</p>
 
 </div>
 
@@ -458,8 +523,6 @@ ayuda al rendimiento académico.
 </footer>
 
 <script>
-
-/* NIVELES */
 
 function toggleNivel(id){
 
@@ -489,8 +552,6 @@ actual.style.display="block";
 
 }
 
-/* RECETAS */
-
 function toggleReceta(btn){
 
 let info=btn.nextElementSibling;
@@ -511,4 +572,3 @@ info.style.display="block";
 
 </body>
 </html>
-```
